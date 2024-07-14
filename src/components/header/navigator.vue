@@ -1,7 +1,6 @@
 <!-- 导航栏------------------------------------------------- -->
 <template>
     <!-- 导航栏 -->
-    <p></p>
     <!-- <el-menu mode="horizontal" :ellipsis="false">
         <el-sub-menu index="1">
             <template #title>产品</template>
@@ -158,14 +157,25 @@
     </el-menu> -->
 
     <div class="menu">
-        <ul>
-            <li v-for="(item,index) in navigatorTable"
-                :key="index"
-                >{{ item.name }}
-            </li>
-        </ul>
+        <div class="menuNavigator">
+            <div v-for="item of navigatorTable" :key="item.id" class="title">
+                {{ item.name }}
+                <div class="list">
+                    <div v-for="list of item.navigatorListTable" :key="list.id" class="listInformation">
+                        {{ list.name }}
+                        <div class="content">
+                            <p v-for="sub of list.navigatorSubTable" :key="sub.id">{{ sub.name }}</p>
+                            <div class="contentInformation">
+                                <img src="#" alt="">
+                                <div href="#" v-for="content of list.navigatorContentTable" :key="content.id" class="contentList">{{ content.name }}</div>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
     </div>
-
 </template>
 
 <script setup>
@@ -201,56 +211,167 @@ import { ref,reactive } from 'vue';
     // ];
 
     const navigatorTable = [
-        { name:'产品' },
-        { name:'行业解决方案' },
-        { name:'标杆案例' },
-        { name:'服务支持' },
-        { name:'应用市场' },
-        { name:'生态伙伴与开发者' },
-        { name:'关于金蝶' }
-    ];
+        { 
+            id:'1',
+            name:'产品',
+            navigatorListTable:[
+                { 
+                    id:'1-1',
+                    name:'业务领域',
+                    navigatorSubTable:[
+                        {
+                            id:'1-1-1-1',
+                            name:'业务领域',
+                        }
+                    ],
+                    navigatorContentTable:[
+                        { id:'1-1-1',name:'财务云' },
+                        { id:'1-1-2',name:'税务云' },
+                        { id:'1-1-3',name:'人力云' },
+                        { id:'1-1-4',name:'制造云' },
+                        { id:'1-1-5',name:'供应链云' },
+                        { id:'1-1-6',name:'星域工业互联网' },
+                        { id:'1-1-7',name:'全渠道云' },
+                        { id:'1-1-8',name:'协同办公云' },
+                        { id:'1-1-9',name:'发票云' }
+                    ]
+                },
+                { id:'1-2',name:'企业级AI平台' },
+                { id:'1-3',name:'大型企业' },
+                { id:'1-4',name:'高成长型企业' },
+                { id:'1-5',name:'小微型企业' },
+                { id:'1-6',name:'查看所有产品' },
+                { id:'1-7',name:'销售热线： 4008-830-830' },
+            ]
+        },
+        { id:'2',name:'行业解决方案' },
+        { id:'3',name:'标杆案例' },
+        { id:'4',name:'服务支持' },
+        { id:'5',name:'应用市场' },
+        { id:'6',name:'生态伙伴与开发者' },
+        { id:'7',name:'关于金蝶' }
+    ]
+  
+    
  
 </script>
 
 <style scoped>
     .menu{
-        margin-left: -13px;
-        white-space : nowrap
+        width: 100%;
+        margin-top: 18px;
+        margin-left: 29px;
     }
-    li{
-       list-style-type: none; 
-       display: inline;
-       padding: 10px;
-       padding-top: 15px;
-       padding-bottom: 28px;
-       font-size: 14px;
-       /* background-color: antiquewhite; */
+    .title{
+        display: inline;
+        white-space: nowrap;
+        font-size: 14px;
+        padding: 8px;
+        padding-bottom: 25px;
+        color: rgb(37, 43, 58);
+        /* background-color: aqua; */
     }
-    li:hover{
+    .title:hover{
         border-bottom: 2px solid rgb(0, 104, 221);
     }
-
-    /* 下拉表格样式 */
-    /* .product{
+    .list{
+        width: 275px;
+        height: 480px;
         position: absolute;
-        left: -9999px;
-        overflow: hidden;
-        background-color: antiquewhite;
-        width: 300px;
-        height: 200px;
-    }
-    .programme{
-        position: absolute;
+        top: 102px;
+        left: 92px;
+        border-top: 1px solid transparent;
+        /* box-shadow: rgba(180, 180, 180, 0.158) -3px 12px 15px 0px; */
+        /* background-color: rgb(255, 255, 255); */
         display: none;
-        margin-left: 200px;
-        overflow: hidden;
-        background-color: rgb(220, 250, 215);
-        width: 300px;
-        height: 200px;
     }
-    li:hover ~ .product{
-        left: 208px;
+    .title:hover .list{
+        display: block;
+    }
+    .title:hover .list,.title:hover .content{
+        border-top: 1px solid lightgray;
+    }
+    /* .list :not(.listInformation){
+        background-color: inherit;
     } */
-   
+    .listInformation{
+        cursor: pointer;
+        background-color: rgb(245, 247, 250);
+        font-size: 18px;
+        font-family: PingFangM, Arial, sans-serif;
+        text-align: left;
+        line-height: 27px;
+        padding: 18px 10px 14px 35px;
+        color: rgb(37, 43, 58);
+    }
+    .listInformation:hover{
+        color: rgb(0, 104, 221);
+        background-color: white;
+    }
+    /* .list :nth-child(1) + :not(.content){
+        background-color: antiquewhite;
+    } */
+    /* .list :nth-child(1) + :not(.content) + :hover{
+        background-color: antiquewhite;
+    } */
+    .list :nth-child(6){
+        padding-top: 79px; 
+        padding-bottom: 0px;
+        font-size: 14px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(37, 43, 58);
+    } 
+    .list :nth-child(7){
+        font-size: 12px;
+        padding-top: 6px;
+        padding-bottom: 46px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(37, 43, 58);
+    } 
+    .content{
+        width: 918px;
+        height: 481px;
+        position: absolute;
+        /* background-color: rgba(255, 255, 255, 0.088); */
+        border-top: 1px solid transparent;
+        left: 275px;
+        top: -1px;
+        z-index:1;
+        /* box-shadow: rgba(180, 180, 180, 0.158) 3px 12px 15px 0px; */
+        
+    }
+    /* .content :not(p){
+        background-color: inherit;
+    } */
+    .contentInformation{
+        display: flex;
+        z-index: 999 !important;
+    }
+    .contentInformation :nth-child(6){
+        font-size: 16px;
+        font-family: PingFangM, Arial, sans-serif;
+        text-align: left;
+        line-height: 27px;
+        padding: 10px;
+        color: rgb(37, 43, 58);
+    }
+    .contentInformation :nth-child(7){
+        font-size: 16px;
+        font-family: PingFangM, Arial, sans-serif;
+        text-align: left;
+        line-height: 27px;
+        padding: 10px;
+        color: rgb(37, 43, 58);
+    }
+    .content p{
+        z-index: 999 !important;
+        padding-left: 24px;
+        padding-top: 6px;
+    }
+    .contentList{
+        padding: 10px;
+        font-size: 16px;
+        flex-wrap: wrap;
+    }
 
 </style>

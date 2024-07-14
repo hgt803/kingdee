@@ -43,7 +43,6 @@ import More from './content/more.vue';
         height: 75px;
         display: flex;
     }
-
     /* logo样式 */
     .logo{
         display: flex;

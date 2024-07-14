@@ -1,6 +1,6 @@
 <!-- content1  企业介绍---------------------------------------- -->
 <template>
-    <div class="box">
+    <!-- <div class="box">
         <div class="introduction">
             <h2>企业级AI平台解决方案</h2>
             <p>新一代企业级AI平台，携超级智能AI管理助手Cosmic，集感知、思考、行动、智能响应于一体，简化企业管理，提高运营效率，随时在线，随时待命</p>
@@ -11,7 +11,7 @@
         <div class="picture">
             <img src="../../assets/p1.jpg" alt="backgroundImage">
         </div>
-    </div>
+    </div> -->
     
 </template>
 
@@ -24,6 +24,7 @@
 <style scoped>
     .box{
         display: flex;
+        cursor: pointer;
     }
     .introduction{
         margin-top: 50px;
@@ -54,5 +55,6 @@
     }
     img{
         width: 800px;
+        z-index: -1;
     }
 </style>
