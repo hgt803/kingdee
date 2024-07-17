@@ -2,35 +2,14 @@
 <template>
     <div class="content_warp">
         <div class="content">
-            <div class="header_top">
+            <!-- <div class="header_top">
 
-            </div>
+            </div> -->
             <div class="header_content">
-                <!-- 语言选择、登录、注册  -->
-                <div class="header_phone">
-                    <div class="header_language_left"
-                        @mouseleave="mouseLeaveRegion">
-                        <img src="../assets/earth.svg" alt="language_logo" @mouseover="mouseOverRegion" >
-                        <div class="region"  :class=" showRegion ? 'region_hover' : '' "  >
-                            <a href="#">简体中文</a>
-                            <a href="#">繁体中文</a>
-                            <a href="#">English</a>
-                        </div>
-                    </div>
-                    <div class="header_loginAndregister_right">
-                        <a href="#" class="header_login_right">
-                            登录
-                        </a>
-                        |
-                        <a href="#" class="header_register_right">
-                            注册
-                        </a>                      
-                    </div>
-                </div>
+
                 <!-- 金蝶logo -->
-                <div class="header_logo">
-                    <img src="../assets/logohei.gif" alt="">
-                </div>
+                <img  class="header_logo" src="@/assets/logohei.gif" alt="">
+
                 <!-- 导航栏 -->
                 <div class="header_nav" @mouseover="hoverNav">
                     <ul class="header_nav_list"
@@ -160,16 +139,40 @@
                         </li>
                     </ul>
                 </div>
-                <!-- 购买 -->
-                <div class="header_buy">
-                    <img src="../assets/phone.svg" alt="call">
-                    <p class="header_buy_call_number">4008-830-830</p>
-                    <div class="header_buy_button">申请体验</div>
+                <div class="header_right">
+                    <!-- 语言选择、登录、注册  -->
+                    <div class="header_phone">
+                        <div class="header_language_left"
+                            @mouseleave="mouseLeaveRegion">
+                            <img src="@/assets/earth.svg" alt="language_logo"   @mouseover="mouseOverRegion">
+                            <div class="region"  :class=" showRegion ? 'region_hover' : '' "  >
+                                <a href="#">简体中文</a>
+                                <a href="#">繁体中文</a>
+                                <a href="#">English</a>
+                            </div>
+                        </div>
+                        <div class="header_loginAndregister_right">
+                            <a href="#" class="header_login_right">
+                                登录
+                            </a>
+                            <span>|</span>
+                            <a href="#" class="header_login_right">
+                                注册
+                            </a>                      
+                        </div>
+                    </div>
+                    <!-- 购买 -->
+                    <div class="header_buy">
+                        <img src="@/assets/phone.svg" alt="call" class="icon">
+                        <p class="header_buy_call_number">4008-830-830</p>
+                        <a href="#" class="header_buy_button">申请体验</a>
+                    </div>
+                    <!-- 搜索 -->
+                    <a href="#" class="header_search">
+                        <img src="@/assets/magnifier.svg" alt="">
+                    </a>
                 </div>
-                <!-- 搜索 -->
-                <div class="header_search">
-                    <img src="../assets/magnifier.svg" alt="">
-                </div>
+
             </div>   
         </div>
     </div>
@@ -180,10 +183,10 @@
 <script setup>
 import { ref } from 'vue'
 import '../style.css'
-import plan from '../assets/myqcloud_plan.jpg'
-import staff from '../assets/myqcloud_staff.jpg'
-import goout from '../assets/myqcloud_goout.jpg'
-import relay from '../assets/relay.svg'
+import plan from '@/assets/myqcloud_plan.jpg'
+import staff from '@/assets/myqcloud_staff.jpg'
+import goout from '@/assets/myqcloud_goout.jpg'
+import relay from '@/assets/relay.svg'
    
     // 语言选择、登录、注册  
     const showRegion = ref(false);
@@ -205,74 +208,74 @@ import relay from '../assets/relay.svg'
                 {
                     id:'1-1',
                     name:'业务领域',
-                    href:'',
+                    href:'#',
                     sec_right_Data:[
                         {
                             id:'1-1-1',
                             name:'财务云',
-                            href:'',
+                            href:'#',
                             description:'财务和业务高效协同，支撑业务敏捷创新'
                         },
                         {
                             id:'1-1-2',
                             name:'税务云',
-                            href:'',
+                            href:'#',
                             description:'“业财税票资档”一体化智慧税务管理'
                         },
                         {
                             id:'1-1-3',
                             name:'人力云',
-                            href:'',
+                            href:'#',
                             description:'基于全球领先实践打造的人力资源管理平台'
                         },
                         {
                             id:'1-1-4',
                             name:'制造云',
-                            href:'',
+                            href:'#',
                             description:'纵向集成、端到端集成、横向集成'
                         },
                         {
                             id:'1-1-5',
                             name:'供应链云',
-                            href:'',
+                            href:'#',
                             description:'实现供应链可视化管理'
                         },
                         {
                             id:'1-1-6',
                             name:'星域工业互联网',
-                            href:'',
+                            href:'#',
                             description:'入选国家级“双跨”平台'
                         },
                         {
                             id:'1-1-7',
                             name:'全渠道云',
-                            href:'',
+                            href:'#',
                             description:'覆盖电商、零售、渠道、分销全业务场景'
                         },
                         {
                             id:'1-1-8',
                             name:'协同办公云',
-                            href:'',
+                            href:'#',
                             description:'协同门户、协同审批、智能签到、知识中心等'
                         },
                         {
                             id:'1-1-9',
                             name:'发票云',
-                            href:'',
+                            href:'#',
                             description:'发票管理及协同服务、影像及电子会计档案管理'
                         },
                     ],
                     moreText:'',
                     img:'',
-                    img_href:'',
+                    img_href:'#',
                     bottomText:'' 
 
                 },
                 {
                     id:'1-2',
                     name:'企业级AI平台',
-                    href:'',
-                    img_href:'',
+                    href:'#',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'1-2-1',
@@ -334,8 +337,8 @@ import relay from '../assets/relay.svg'
                 {
                     id:'1-3',
                     name:'大型企业',
-                    href:'',
-                    img_href:'',
+                    href:'#',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'1-3-1',
@@ -420,8 +423,8 @@ import relay from '../assets/relay.svg'
                 {
                     id:'1-4',
                     name:'高成长型企业',
-                    href:'',
-                    img_href:'',
+                    href:'#',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'1-4-1',
@@ -516,8 +519,8 @@ import relay from '../assets/relay.svg'
                 {
                     id:'1-5',
                     name:'小微型企业',
-                    href:'',
-                    img_href:'',
+                    href:'#',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'1-5-1',
@@ -588,138 +591,138 @@ import relay from '../assets/relay.svg'
                         {
                             id:'2-1-1',
                             name:'企业级AI平台解决方案',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-2',
                             name:'企业出海数字化方案',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-3',
                             name:'央国企数字化解决方案',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-4',
                             name:'专精特新企业数字化方案',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-5',
                             name:'数字化转型方法论',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-6',
                             name:'小微企业业财税一体化方案',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-7',
                             name:'EBC 下一代ERP',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-8',
                             name:'协同办公云',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-1-9',
                             name:'企业IPO解决方案',
-                            href:'',
+                            href:'#',
                         },
                     ],
                     moreText:'热点方案推荐',
                     img:plan,
-                    img_href:'', 
+                    img_href:'#', 
                     bottomText:''
                 },
                 {
                     id:'2-2',
                     name:'行业方案',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'2-2-1',
                             name:'装备制造',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-2',
                             name:'建筑行业',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-3',
                             name:'医药流通',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-4',
                             name:'汽配行业',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-5',
                             name:'钢铁冶金',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-6',
                             name:'交通与物流',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-7',
                             name:'制药行业',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-8',
                             name:'日化日用品',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-9',
                             name:'流程制造',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-10',
                             name:'批发与零售',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-11',
                             name:'现代农牧',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-12',
                             name:'电子半导体',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-13',
                             name:'房地产行业',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-14',
                             name:'能源与资源',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-15',
                             name:'食品饮料',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'2-2-16',
                             name:'餐饮行业',
-                            href:'',
+                            href:'#',
                         },
                     ],
                     moreText:'',
@@ -731,7 +734,7 @@ import relay from '../assets/relay.svg'
         {
             id:'3',
             name:'标杆案例',
-            href:'',
+            href:'#',
         },
         {
             id:'4',
@@ -741,12 +744,12 @@ import relay from '../assets/relay.svg'
                 {
                     id:'4-1',
                     name:'关于客户成功',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'4-1-1',
                             name:'客户成功体系',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -755,22 +758,22 @@ import relay from '../assets/relay.svg'
                 {
                     id:'4-2',
                     name:'客户成功服务',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'4-2-1',
                             name:'服务产品与方案',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'4-2-2',
                             name:'我的服务',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'4-2-3',
                             name:'金蝶云社区',
-                            href:'',
+                            href:'#',
                             relay:relay
                         }
                     ],
@@ -780,23 +783,23 @@ import relay from '../assets/relay.svg'
                 {
                     id:'4-3',
                     name:'赋能与认证',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'4-3-1',
                             name:'金蝶认证',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'4-3-2',
                             name:'数字化人才赋能',
-                            href:'',
+                            href:'#',
                             relay:relay
                         },
                         {
                             id:'4-3-3',
                             name:'数字化转型工作坊',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -805,22 +808,22 @@ import relay from '../assets/relay.svg'
                 {
                     id:'4-4',
                     name:'公告',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'4-4-1',
                             name:'服务公告',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'4-4-2',
                             name:'产品生命周期',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'4-4-3',
                             name:'安全通告',
-                            href:'',
+                            href:'#',
                             relay:relay
                         }
                     ],
@@ -830,13 +833,13 @@ import relay from '../assets/relay.svg'
             ],
             moreText:'',
             img:'',
-            img_href:'', 
+            img_href:'#', 
             bottomText:''
         },
         {
             id:'5',
             name:'应用市场',
-            href:'',
+            href:'#',
         },
         {
             id:'6',
@@ -846,37 +849,37 @@ import relay from '../assets/relay.svg'
                 {
                     id:'6-1',
                     name:'成为合作伙伴',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'6-1-1',
                             name:'金蝶伙伴体系',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-1-2',
                             name:'营销服务伙伴',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-1-3',
                             name:'专业服务伙伴',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-1-4',
                             name:'独立软件开发',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-1-5',
                             name:'技术平台伙伴',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-1-6',
                             name:'院校联盟',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -885,12 +888,12 @@ import relay from '../assets/relay.svg'
                 {
                     id:'6-2',
                     name:'查询合作伙伴',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'6-2-1',
                             name:'伙伴资质查询',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -899,37 +902,37 @@ import relay from '../assets/relay.svg'
                 {
                     id:'6-3',
                     name:'开发者',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'6-3-1',
                             name:'开发文档',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-3-2',
                             name:'工具与资源',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-3-3',
                             name:'在线课程',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-3-4',
                             name:'开发者社区',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-3-5',
                             name:'开发者大赛',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'6-3-6',
                             name:'数字化转型工作坊',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -938,12 +941,12 @@ import relay from '../assets/relay.svg'
                 {
                     id:'6-4',
                     name:'技术与赋能',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'6-4-1',
                             name:'伙伴生态圈',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -952,7 +955,7 @@ import relay from '../assets/relay.svg'
             ],
             moreText:'开发者大赛',
             img:plan,
-            img_href:'', 
+            img_href:'#', 
             bottomText:'第六届金蝶云·苍穹追光者开发大赛'
         },
         {
@@ -963,37 +966,37 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-1',
                     name:'了解金蝶',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-1-1',
                             name:'集团介绍',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-1-2',
                             name:'董事及管理层',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-1-3',
                             name:'发展历程',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-1-4',
                             name:'公司荣誉',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-1-5',
                             name:'社会责任',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-1-6',
                             name:'信任中心',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1002,27 +1005,27 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-2',
                     name:'新闻与活动',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-2-1',
                             name:'新闻动态',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-2-2',
                             name:'市场活动',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-2-3',
                             name:'媒体报道',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-2-4',
                             name:'社交媒体',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1031,32 +1034,32 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-3',
                     name:'中国管理模式',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-3-1',
                             name:'中国管理模式杰出奖',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-3-2',
                             name:'十三届中国管理全球论坛',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-3-3',
                             name:'十二届中国管理全球论坛',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-3-4',
                             name:'十一届中国管理全球论坛',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-3-5',
                             name:'十届中国管理全球论坛',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1065,27 +1068,27 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-4',
                     name:'创见者大会',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-4-1',
                             name:'关于创见者',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-4-2',
                             name:'2023全球创见者大会',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-4-3',
                             name:'2022全球创见者大会',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-4-4',
                             name:'2021全球创见者大会',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1094,12 +1097,12 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-5',
                     name:'ESG',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-5-1',
                             name:'ESG报告',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1108,30 +1111,30 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-6',
                     name:'投资者关系',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-6-1',
                             name:'投资者关系主页',
-                            href:'',
+                            href:'#',
                             relay:relay
                         },
                         {
                             id:'7-6-2',
                             name:'公告与通函',
-                            href:'',
+                            href:'#',
                             relay:relay
                         },
                         {
                             id:'7-6-3',
                             name:'财务报告',
-                            href:'',
+                            href:'#',
                             relay:relay
                         },
                         {
                             id:'7-6-4',
                             name:'股票信息',
-                            href:'',
+                            href:'#',
                             relay:relay
                         }
                     ],
@@ -1141,28 +1144,28 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-7',
                     name:'金蝶招聘',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-7-1',
                             name:'校园招聘',
-                            href:'',
+                            href:'#',
                             relay:relay
                         },
                         {
                             id:'7-7-2',
                             name:'社会招聘',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-7-3',
                             name:'成长与发展',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-7-4',
                             name:'生活在金蝶',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1171,17 +1174,17 @@ import relay from '../assets/relay.svg'
                 {
                     id:'7-8',
                     name:'联系我们',
-                    img_href:'',
+                    img_href:'#',
                     sec_right_Data:[
                         {
                             id:'7-8-1',
                             name:'总部及分支',
-                            href:'',
+                            href:'#',
                         },
                         {
                             id:'7-8-2',
                             name:'购买与咨询',
-                            href:'',
+                            href:'#',
                         }
                     ],
                     moreText:'',
@@ -1190,7 +1193,7 @@ import relay from '../assets/relay.svg'
             ],
             moreText:'',
             img:'',
-            img_href:'', 
+            img_href:'#', 
             bottomText:''
         }
     ];
@@ -1305,98 +1308,50 @@ import relay from '../assets/relay.svg'
 
     .header_content{
         position: relative;
-
-        // 联系方式
-        .header_phone{
-            position: absolute;
-            z-index:99;
-            display: inline-block;
-            width: 146px;
-            right: 0px;
-            .header_language_left{
-                display: inline-block;
-                margin-left: -2px;
-                height: 200px;
-                img{
-                    width: 26px;
-                    height: 26px;
-                }
-                .region{
-                    position: absolute;
-                    background-color: rgb(255, 255, 255);
-                    width: 96px;
-                    height: 0px;
-                    // border-radius: 1px;
-                    right: 78px;
-                    top: 28px;
-                    color: rgb(87, 93, 108);
-                    font-family: PingFangM, Arial, sans-serif;
-                    font-size: 14px;
-                    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px 0px;
-                    transition: all 0.5s ease-out;
-                    overflow: hidden;
-                    z-index: 999;
-                    a{
-                        display: block;
-                        padding-top: 13px;
-                        padding-bottom: 13px;
-                        text-align: center;
-                    }
-                    :nth-child(1){
-                        margin-top: 9px;
-                    }
-                }
-                .region_hover{
-                    height: 150px;
-                }
-                a:hover{
-                    color: white;
-                    background-color: rgb(33, 131, 233);
-                }
-            }
-            .header_loginAndregister_right{
-                display: inline-block;
-                top: -8px;
-                right: -23px;
-                position: relative;
-                font-size: 14px;
-                .header_login_right{
-                    display: inline-block;
-                    color: rgb(87, 93, 108);
-                }
-                .header_register_right{
-                    display: inline-block;
-                    color: rgb(87, 93, 108);
-                }
-            }
-        }
+        clear: both;;
+        height: 100px;
+        line-height: 100px;
 
         // 金蝶logo
         .header_logo{
-            position: absolute;
-            left: 30px;
-            padding: 15px 0; 
-            img{
-                // width: 182px;182x50
-                width: 17.8%;
-            }
+            // position: absolute;
+            // left: 30px;
+            display: inline-block;
+            // padding: 15px 0; 
+            height: 100px;
+            line-height: 100px;
+
+            // float: left;
+            // img{
+            //     // width: 182px;182x50
+            //     // width: 17.8%;
+            //     height: 100px;
+            //     display: inline-block;
+            // }
         }
 
         // 导航栏
         .header_nav{
+            display: inline-block;
+            // line-height: 100px;
+            // height: 100px;
             // ul
             .header_nav_list{
                 position: relative;
                 // background-color: lightblue;
-                left: 20%;
-                top: 10px;
+                // left: 20%;
+                // top: 10px;
                 // width: 80%;
                 // min-width: 20%;
-                width: 48%;
-                min-width: 250px;
-                white-space: nowrap;
-                overflow: hidden;
-                min-height: 600px;
+                // width: 48%;
+                // min-width: 250px;
+                // white-space: nowrap;
+            height: 100px;
+            overflow: hidden;
+                // min-height: 600px;
+            line-height: 100px;
+            display: inline-block;
+
                 // li
                 .header_nav_item{
                     // position: absolute;
@@ -1404,9 +1359,8 @@ import relay from '../assets/relay.svg'
                     display: inline-block;
                     overflow: hidden;
                     font-size: 14px;
-                    font-family: PingFangM, Arial, sans-serif;
+                    // font-family: PingFangM, Arial, sans-serif;
                     background-color: antiquewhite;
-                    padding: 20px 2px 250px 2px;
                     .line{
                         position: absolute;
                         bottom: 0;
@@ -1419,8 +1373,10 @@ import relay from '../assets/relay.svg'
                     // a
                     .nav_item_text{
                         color: rgb(37, 43, 58);
-                        padding: 20px;
+                        // padding: 20px;
                         background-color: aqua;
+                        padding: 0px 30px;
+                        display: inline-block;
                         .line{
                             position: absolute;
                             bottom: 0;
@@ -1472,67 +1428,174 @@ import relay from '../assets/relay.svg'
             
             
         }
-
-        // 金蝶购买
-        .header_buy{
+        .header_right{
             position: absolute;
-            display: inline-block;
-            width: 146px;
-            right: 0px;
-            min-left: 70%;
-            top: 35px;
-            img{
+            right: 0;
+            top: 40px;
+            
+            // 联系方式
+            .header_phone{
                 position: absolute;
-                right: 315px;
-                width: 24px;
-                height: 24px;
-                transform: rotate(-10deg);
-                padding-top: 9px;
+                z-index:99;
+                display: inline-block;
+                // width: 146px;
+                right: 0px;
+                top: -48px;
+                line-height: 50px;
+                // height: 50px;
+                .header_language_left{
+                    position: relative;
+                    display: inline-block;
+                    // margin-left: -2px;
+                    height: 50px;
+                    img{
+                        width: 26px;
+                        height: 26px;
+                        padding: 12px;
+                        display: inline-block;
+                        // line-height: 50px;
+                        position: relative;
+                        top: 16px;
+                    }
+                    .region{
+                        position: absolute;
+                        background-color: rgb(255, 255, 255);
+                        width: 96px;
+                        height: 0px;
+                        // border-radius: 1px;
+                        left: 50%;
+                        // right: 0;
+                        margin-left: -48px;
+                        top: 60px;
+                        color: rgb(87, 93, 108);
+                        font-family: PingFangM, Arial, sans-serif;
+                        font-size: 14px;
+                        box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px 0px;
+                        transition: all 0.5s ease-out;
+                        overflow: hidden;
+                        z-index: 999;
+                        a{
+                            display: block;
+                            // padding-top: 13px;
+                            // padding-bottom: 13px;
+                            text-align: center;
+                            height: 50px;
+                            line-height: 50px;
+                        }
+                        // :nth-child(1){
+                        //     margin-top: 9px;
+                        // }
+                    }
+                    .region_hover{
+                        height: 150px;
+                    }
+                    a:hover{
+                        color: white;
+                        background-color: rgb(33, 131, 233);
+                    }
+                }
+                .header_loginAndregister_right{
+                    display: inline-block;
+                    // top: -8px;
+                    // right: -23px;
+                    // position: relative;
+                    .header_login_right{
+                        padding: 0 10px;
+                        display: inline-block;
+                        color: rgb(87, 93, 108);
+                        font-size: 20px;
+                    }
+                    // .header_register_right{
+                    //     display: inline-block;
+                    //     color: rgb(87, 93, 108);
+                    // }
+                }
             }
-            .header_buy_call_number{
-                position: absolute;
-                right: 156px;
-                width: 150px;
-                font-size: 14px;
-                padding-top: 13px;
-                color: rgb(87, 93, 108);
-            }
-            .header_buy_button{
-                font-size: 14px;
-                position: absolute;
-                color: rgb(0, 104, 221);
-                background-color: white;
-                border: 1px solid rgba(133, 154, 184, 0.3);
-                border-radius: 5px;
+
+            // 金蝶购买
+            .header_buy{
+                // position: absolute;
+                display: inline-block;
+                // width: 146px;
+                // right: 0px;
+                // min-left: 70%;
                 // top: 35px;
-                right: 80px;
-                width: 98px;
-                height: 38px;
-                text-align: center;
+                // float: right;
                 line-height: 40px;
-            }
-            .header_buy_button:hover{
-                // background-color: rgb(0, 104, 221);
-                background: repeating-linear-gradient(to right,rgb(0, 104, 221),rgb(87, 167, 213));
-                color: white;
-            }
-        }
+                .icon{
+                    // position: absolute;
+                    // right: 315px;
+                    width: 30px;
+                    height: 40px;
+                    line-height: 40px;
+                    // transform: rotate(-10deg);
+                    // padding-top: 9px;
+                    // display: inline-block;
+                    font-size: 30px;
+                    position: relative;
+                    top: 10px; // 强行修复位置
+                }
+                .header_buy_call_number{
+                    // position: absolute;
+                    // right: 156px;
+                    width: 150px;
+                    font-size: 20px;
+                    // padding-top: 13px;
+                    display: inline-block;
+                    color: rgb(87, 93, 108);
+                    padding: 0px 10px;
+                    height: 40px;
+                    
+                }
+                .header_buy_button{
+                    font-size: 18px;
+                    // position: absolute;
+                    color: rgb(0, 104, 221);
+                    background-color: white;
+                    border: 1px solid rgba(133, 154, 184, 0.3);
+                    border-radius: 5px;
+                    // top: 35px;
+                    // right: 80px;
+                    // width: 98px;
+                    // height: 38px;
+                    padding:  30px;
+                    text-align: center;
+                    display: inline-block;
+                    line-height: 40px;
+                    height: 40px;
 
-        // 搜索
-        .header_search{
-            position: absolute;
-            display: inline-block;
-            width: 146px;
-            right: 0px;
-            top: 43px;
-            img{
-                position: absolute;
-                width: 23px;
-                height: 23px;
-                right: 27px;
-                // top: 43px
+                }
+                .header_buy_button:hover{
+                    // background-color: rgb(0, 104, 221);
+                    background: repeating-linear-gradient(to right,rgb(0, 104, 221),rgb(87, 167, 213));
+                    color: white;
+                }
+            }
+
+            // 搜索
+            .header_search{
+                // position: absolute;
+                display: inline-block;
+                // width: 146px;
+                // right: 0px;
+                // top: 43px;
+                // padding: 12px;
+                line-height: 40px;
+                height: 40px;
+                img{
+                    // position: absolute;
+                    position: relative;
+                    top: 18px;
+                    width: 26px;
+                    height: 26px;
+                    // right: 27px;
+                    // top: 43px
+                    padding: 10px 20px;
+                    display: inline-block;
+                }
             }
         }
+       
     }
    
    
